@@ -1,0 +1,96 @@
+:root{
+    scroll-behavior: smooth;
+    // overflow-x: hidden;
+    font-family:cursive;
+}
+
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::after,
+    *::before {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+body{
+    line-height: 1.5;
+}
+h1:not(.brand__container h1){
+    font-size: 2rem;
+}
+a,li{
+    display: block;
+    text-decoration: none;
+    color: $dark;
+}
+
+ul{
+    list-style: none;
+}
+
+button:hover, .social__links a:hover{
+    cursor: pointer;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.container{
+    width: 90%;
+    margin-inline: auto;
+    background-color: inherit;
+}
+
+.header-text{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+@each $color-name, $color in ('green': $green, 'yellow': $yellow, 'red': $red){
+    .#{$color-name}{
+        background-color: $color;
+    }
+}
+
+
+@mixin flex($direction, $justify-content, $align-items){
+    display: flex;
+    flex-direction: $direction;
+    gap: var(--gap);
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+// @mixin color($)
+.dark{
+    background-color: black !important;
+}
+// $white : white;
+// @if($nav-white : #ffffff){
+//     $nav-white: $dark;
+// }
+// @if $white == white{
+//     $white : black;
+// }
+

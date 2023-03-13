@@ -1,0 +1,107 @@
+.header-nav-section {
+    background-color: white;
+    z-index: 200;
+    width: 100%;
+    position: relative;
+    border-bottom: $default-border;
+    transition: all 0.3s ease-in-out;
+    .container {
+        padding: 0 1rem;
+        @include flex(row, space-between, center);
+    }
+}
+// add sticky navigation bar
+.sticky {
+    position: fixed;
+    box-shadow: 0px 0px 15px 2px $light-shadow;
+    border-bottom: 0 !important;
+}
+
+.nav__items {
+    position: absolute;
+    top: -100%;
+    transform: translateY(-100%);
+    left: 0;
+    width: 100%;
+    background-color: inherit;
+    z-index: 1;
+    .link {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1pt solid $extra-light;
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .nav__items {
+        position: relative;
+        transform: translate(0);
+        @include flex(row, unset, unset);
+        background-color: transparent;
+        --gap: 1rem;
+
+        width: fit-content;
+        .link {
+            padding: 1rem;
+            text-align: center;
+            border: 0 !important;
+        }
+    }
+}
+.open {
+    top: 100%;
+    transform: translateY(0);
+}
+//buttons to open nav
+.nav__toggle {
+    position: relative;
+    background-color: inherit;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    @include flex(row, center, center);
+
+    .bar {
+        width: 30px;
+        position: relative;
+    border: 1px solid $secondary-clr !important;
+
+
+        &::before {
+            content: "";
+            width: 30px;
+            position: absolute;
+            top: 4px;
+            left: -1px;
+            transform: translateX(0);
+            border: inherit;
+        }
+
+        &::after {
+            content: "";
+            width: 30px;
+            position: absolute;
+            bottom: 4px;
+            left: -1px;
+            border: inherit;
+        }
+    }
+}
+@media screen and (min-width: 560px) {
+    .nav__toggle {
+        display: none;
+    }
+}
+
+.header-main-section {
+    position: relative;
+}
+
+.brand__container {
+    height: 56px;
+    aspect-ratio: 16/9;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}

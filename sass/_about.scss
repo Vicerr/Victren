@@ -1,0 +1,48 @@
+.about-text-container{
+    > *{
+        margin: 1rem 0;
+    }
+}
+
+.aboutme{
+    @include flex(row, unset,center);
+    --gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+  
+    .image{
+        flex-basis: 300px;
+        flex-grow: 1;
+        img{
+        width: 100%;
+        }
+    }
+    .text{
+        flex-basis: 200px;
+        flex-grow: 99999;
+
+        @include flex(column, unset, unset);
+        --gap: .25em;
+    }
+}
+.list-head{
+    *{
+        margin: 0 1rem;
+    }
+}
+
+.tech-stack{
+    @include flex(column, unset, unset);
+    --gap: 0;
+    div{
+    @include flex(row, unset, unset);
+        flex-wrap: wrap;
+        > *{
+            display: inline-block;
+            padding: .5rem .75rem;
+            .fas{
+                color: $secondary-clr;
+            }
+        }
+    }
+}

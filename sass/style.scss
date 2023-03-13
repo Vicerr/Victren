@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'config';
+@import 'navigation-bar';
+@import 'intro';
+@import 'about';
+@import 'projects';
+@import 'calltoaction';
+
+#home{
+    height: fit-content
+}
+
+
+section:not(.header-main-section){
+    padding: 1rem 0;
+}
+.header-main-section{
+    padding-bottom: 1rem;
+}
+footer p{
+    background-color: $secondary-clr;
+    text-align: center;
+    padding: .5rem 0;
+    font-weight: 600;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    p{
+        font-size: .90rem;
+    }
+}
