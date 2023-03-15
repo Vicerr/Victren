@@ -1,3 +1,6 @@
+window.addEventListener('load', ()=>{
+    document.body.classList.remove('d-none')
+})
 const nav = document.querySelector('.nav__items');
 const navToggleBtn = document.querySelector('.nav__toggle');
 const navHeader = document.querySelector('.header-nav-section');
@@ -39,9 +42,6 @@ window.onscroll = ()=>{
 
     }
 }
-
-const body = document.body;
-const toggle = document.getElementById('tog')
 
 toggle.addEventListener('click', ()=>{
     body.classList.toggle('dark')

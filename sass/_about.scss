@@ -5,26 +5,39 @@
 }
 
 .aboutme{
-    @include flex(row, unset,center);
+    @include flex(column, center,center);
     --gap: 1rem;
     width: 100%;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   
     .image{
-        flex-basis: 300px;
-        flex-grow: 1;
-        img{
         width: 100%;
+        max-width: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+        width: inherit;
         }
     }
     .text{
-        flex-basis: 200px;
-        flex-grow: 99999;
-
         @include flex(column, unset, unset);
         --gap: .25em;
+        width: 100%;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .aboutme{
+
+        @include flex(row, unset, flex-start);
+        .text{
+           width: 70%;
+        }
+    }
+}
+
+
 .list-head{
     *{
         margin: 0 1rem;

@@ -2,72 +2,46 @@
     height: 90vh;
     .intro-section{
         position: absolute;
-        bottom: 0;
+        bottom: 15%;
         left: 50%;
         width: 100%;
-        transform: translate(-50%, 0%);
-
-
+        transform: translate(-50%, 15%);
     }
-
     .image-section{
         @include flex(row, center, center);
        img{
         width: 100%;
        }
-
     }
-
-
 }
-@media screen and (max-width: 480px) {
-    .header-main-section{
-        // height: 80vh;
 
-    }
-    
-}
 
 @media screen and (min-width:620px) {
-    
     .header-main-section{
         @include flex(row,flex-start,unset);
         --gap: 0px;
-        // background-color: green;
-        
         .intro-section{
-            // background-color: #0017da;
             @include flex(column,center,flex-start);
             position: relative;
             bottom: unset;
             left: unset;
             transform: translate(0, 0);
-            //  color: white;
-
-
             h1{
-                font-size: 3rem
+                font-size: 2.5rem
             }
             h2{
                 font-size: 2rem;
             }
         }
-    
         .image-section{
             height: 100%;
             width: 100%;
-            background: {
-                
-            };
-  
         }
-    
-    
     }
-    
 }
 .focus-text{
     color: #0017da;
     font-weight: 900;
     text-transform: uppercase;
+    display: inline;
 }

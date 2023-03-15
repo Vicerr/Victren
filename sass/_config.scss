@@ -1,6 +1,5 @@
 :root{
     scroll-behavior: smooth;
-    // overflow-x: hidden;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -27,6 +26,12 @@
 }
 body{
     line-height: 1.5;
+    max-width: 2000px;
+    margin-inline: auto;
+    position: relative;
+}
+.d-none{
+    display: none;
 }
 h1:not(.brand__container h1){
     font-size: 2rem;
@@ -82,15 +87,4 @@ button:hover, .social__links a:hover{
     align-items: $align-items;
 }
 
-// @mixin color($)
-.dark{
-    background-color: black !important;
-}
-// $white : white;
-// @if($nav-white : #ffffff){
-//     $nav-white: $dark;
-// }
-// @if $white == white{
-//     $white : black;
-// }
 

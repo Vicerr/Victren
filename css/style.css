@@ -1,6 +1,6 @@
 :root {
   scroll-behavior: smooth;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *,
@@ -25,6 +25,13 @@
 }
 body {
   line-height: 1.5;
+  max-width: 2000px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.d-none {
+  display: none;
 }
 
 h1:not(.brand__container h1) {
@@ -80,16 +87,12 @@ button:hover, .social__links a:hover {
   background-color: #f44336;
 }
 
-.dark {
-  background-color: black !important;
-}
-
 .header-nav-section {
   background-color: white;
   z-index: 200;
   width: 100%;
   position: relative;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+  border-bottom: 0.5px solid rgb(240, 240, 240);
   transition: all 0.3s ease-in-out;
 }
 .header-nav-section .container {
@@ -119,7 +122,7 @@ button:hover, .social__links a:hover {
 .nav__items .link {
   padding: 1rem;
   text-align: center;
-  border-bottom: 1pt solid hsla(0deg, 0%, 73.3%, 0.5);
+  border-bottom: 0.5px solid rgb(240, 240, 240);
 }
 
 @media screen and (min-width: 560px) {
@@ -161,26 +164,10 @@ button:hover, .social__links a:hover {
   align-items: center;
 }
 .nav__toggle .bar {
-  width: 30px;
   position: relative;
-  border: 1px solid #0023ff !important;
-}
-.nav__toggle .bar::before {
-  content: "";
-  width: 30px;
-  position: absolute;
-  top: 4px;
-  left: -1px;
-  transform: translateX(0);
-  border: inherit;
-}
-.nav__toggle .bar::after {
-  content: "";
-  width: 30px;
-  position: absolute;
-  bottom: 4px;
-  left: -1px;
-  border: inherit;
+  color: #0023ff;
+  width: 100%;
+  font-size: 1.125rem;
 }
 
 @media screen and (min-width: 560px) {
@@ -206,10 +193,10 @@ button:hover, .social__links a:hover {
 }
 .header-main-section .intro-section {
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 15%);
 }
 .header-main-section .image-section {
   display: flex;
@@ -243,7 +230,7 @@ button:hover, .social__links a:hover {
     transform: translate(0, 0);
   }
   .header-main-section .intro-section h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .header-main-section .intro-section h2 {
     font-size: 2rem;
@@ -257,6 +244,7 @@ button:hover, .social__links a:hover {
   color: #0017da;
   font-weight: 900;
   text-transform: uppercase;
+  display: inline;
 }
 
 .about-text-container > * {
@@ -265,32 +253,45 @@ button:hover, .social__links a:hover {
 
 .aboutme {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: var(--gap);
-  justify-content: unset;
+  justify-content: center;
   align-items: center;
   --gap: 1rem;
   width: 100%;
-  flex-wrap: wrap;
 }
 .aboutme .image {
-  flex-basis: 300px;
-  flex-grow: 1;
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .aboutme .image img {
-  width: 100%;
+  width: inherit;
 }
 .aboutme .text {
-  flex-basis: 200px;
-  flex-grow: 99999;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
   justify-content: unset;
   align-items: unset;
   --gap: .25em;
+  width: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+  .aboutme {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    justify-content: unset;
+    align-items: flex-start;
+  }
+  .aboutme .text {
+    width: 70%;
+  }
+}
 .list-head * {
   margin: 0 1rem;
 }
@@ -321,7 +322,6 @@ button:hover, .social__links a:hover {
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -333,8 +333,9 @@ button:hover, .social__links a:hover {
 .project {
   border-radius: 5px;
   position: relative;
-  height: 300px;
+  aspect-ratio: 5/4;
   overflow: hidden;
+  max-width: 800px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -356,7 +357,7 @@ button:hover, .social__links a:hover {
 }
 .project img {
   width: 100%;
-  height: inherit;
+  height: 100%;
 }
 
 .text-overlay {
@@ -473,15 +474,15 @@ section:not(.header-main-section) {
 }
 
 footer p {
-  background-color: #0023ff;
+  background-color: black;
   text-align: center;
   padding: 0.5rem 0;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
 }
 
 @media screen and (max-width: 500px) {
-  p {
+  p:not(.focus-text) {
     font-size: 0.9rem;
   }
 }/*# sourceMappingURL=style.css.map */

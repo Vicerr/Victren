@@ -3,7 +3,7 @@
     z-index: 200;
     width: 100%;
     position: relative;
-    border-bottom: $default-border;
+    border-bottom: .5px solid rgb(240, 240, 240);
     transition: all 0.3s ease-in-out;
     .container {
         padding: 0 1rem;
@@ -28,7 +28,7 @@
     .link {
         padding: 1rem;
         text-align: center;
-        border-bottom: 1pt solid $extra-light;
+        border-bottom: .5px solid rgb(240, 240, 240);
     }
 }
 
@@ -62,29 +62,11 @@
     @include flex(row, center, center);
 
     .bar {
-        width: 30px;
         position: relative;
-    border: 1px solid $secondary-clr !important;
+        color: $secondary-clr;
 
-
-        &::before {
-            content: "";
-            width: 30px;
-            position: absolute;
-            top: 4px;
-            left: -1px;
-            transform: translateX(0);
-            border: inherit;
-        }
-
-        &::after {
-            content: "";
-            width: 30px;
-            position: absolute;
-            bottom: 4px;
-            left: -1px;
-            border: inherit;
-        }
+            width: 100%;
+            font-size: 1.125rem;
     }
 }
 @media screen and (min-width: 560px) {
